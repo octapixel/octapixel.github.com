@@ -61,11 +61,11 @@
 			</div>
 			
 			<ul class="navbarItems opened" id="navbarItems">
-				<li class="active" id="navbarHome" title="Home"><a href="#home">Home</a></li>
-				<li id="navbarTeam" title="Team"><a href="#about">About</a></li>
-				<li id="navbarServices" title="Services"><a href="#services">Services</a></li>
-				<li id="navbarShowcase" title="Showcase"><a href="#showcase">Showcase</a></li>
-				<li id="navbarContact" title="Connect"><a href="#connect">Connect</a></li>
+				<a href="#home"><li class="active" id="navbarHome" title="Home">Home</li></a>
+				<a href="#about"><li id="navbarTeam" title="Team">About</li></a>
+				<a href="#services"><li id="navbarServices" title="Services">Services</li></a>
+				<a href="#showcase"><li id="navbarShowcase" title="Showcase">Showcase</li></a>
+				<a href="#connect"><li id="navbarContact" title="Connect">Connect</li></a>
 			</ul>
 		</div>	
 		

@@ -1098,7 +1098,6 @@ src: url('../fonts/Raleway-Light.otf')
 		display: none;
 	}
 
-
 	.navbarItems.opened{
 		display: block;
 		/*transition-property: all;
@@ -1112,7 +1111,7 @@ src: url('../fonts/Raleway-Light.otf')
 		display: block;
 	}
 
-	.navbarItems.opened li.active a{
+	.navbarItems.opened a li.active {
 		color: #f75e00 !important;
 	}
 
