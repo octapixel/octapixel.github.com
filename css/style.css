@@ -24,7 +24,7 @@ src: url('../fonts/Raleway-Light.otf')
 
 	/* flattening the new scrollbar */
 	  ::-webkit-scrollbar-track {
-	    background-color: rgba(100,100,100,0.6);
+	    background-color: rgba(255,255,255,0.6);
 	      z-index: 999;
 
 	  }
