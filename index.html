@@ -21,7 +21,8 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/custom.js"></script>
 	<!--<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>-->
-    <script>
+    <script type="text/javascript">
+    	window.onload = loadScript;
 		var myCenter=new google.maps.LatLng(12.941838,77.628332);
 
 		function initialize()
@@ -67,8 +68,6 @@
 		      'callback=initialize';
 		  document.body.appendChild(script);
 		}
-
-		window.onload = loadScript;
 	</script>
 </head>
 <body>
