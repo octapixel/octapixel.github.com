@@ -224,3 +224,19 @@ function convertToPercent(rawPixels){
 	console.log("percent : "+Math.round(percent));
 	return Math.round(percent);
 }
+
+function form_validator()
+{
+	var name = $(document).getElementById('txtName');
+	var email = $(document).getElementById('txtEmail');
+	var msg = $(document).getElementById('txtMessage');
+	if (name == '' || email == '' || msg == '') {
+		$("#info-msg").html('<b>Please fill all the details</b>');
+		return false;
+	}
+	else
+	{
+		$("#info-msg").html('<b>Thank you</b>');	
+		return true;
+	}
+}
