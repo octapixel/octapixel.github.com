@@ -23,8 +23,6 @@
 	<!--<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>-->
     <script type="text/javascript">
     	window.onload = loadScript;
-		var myCenter=new google.maps.LatLng(12.941838,77.628332);
-
 		function initialize()
 		{
 		var mapProp = {
@@ -67,6 +65,8 @@
 		  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false&' +
 		      'callback=initialize';
 		  document.body.appendChild(script);
+		  var myCenter=new google.maps.LatLng(12.941838,77.628332);
+
 		}
 	</script>
 </head>
