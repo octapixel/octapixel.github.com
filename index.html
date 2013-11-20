@@ -301,7 +301,8 @@
 					<tr>
 						<td style="width:40%">
 							<div class="contactForm">
-								<form>
+								<span class="info-msg"></span>
+								<form onsubmit="return form_validator()" method="post">
 									<label for="txtName">Name</label> <br>
 									<input type="text" name="txtName" id="txtName" />
 									<br><br>
