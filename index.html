@@ -64,6 +64,7 @@
 -->
 </head>
 <body>
+	<div class="infoMsgWrapper"><div class="infoMsg"></div></div>
 	<div class="mainWrapper">
 		<div class="navbar">
 			<div class="logo" title="Octapixel">
@@ -301,8 +302,7 @@
 					<tr>
 						<td style="width:40%">
 							<div class="contactForm">
-								<span class="info-msg"></span>
-								<form onsubmit="return form_validator()" method="post">
+								<form>
 									<label for="txtName">Name</label> <br>
 									<input type="text" name="txtName" id="txtName" />
 									<br><br>
@@ -315,7 +315,7 @@
 									<textarea name="txtMessage" id="txtMessage" rows="5"></textarea>
 									<br>
 
-									<button class="contactSubmit" id="contactSubmit">Submit</button>
+									<button class="contactSubmit" id="contactSubmit" onclick="form_validator();">Submit</button>
 								</form>
 							</div>
 						</td>
@@ -331,8 +331,7 @@
 
 				<div class="contactMobile" style="display:none;">
 					<div class="contactForm">
-						<span class="info-msg"></span>
-						<form onsubmit="return form_validator()" method="post">
+						<form>
 							<label for="txtName">Name</label> <br>
 							<input type="text" name="txtName" id="txtName" />
 							<br><br>
@@ -345,7 +344,7 @@
 							<textarea name="txtMessage" id="txtMessage" rows="5"></textarea>
 							<br>
 
-							<button class="contactSubmit" id="contactSubmit" type="submit">Submit</button>
+							<button class="contactSubmit" id="contactSubmit" onclick="form_validator();">Submit</button>
 						</form>
 					</div>
 

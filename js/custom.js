@@ -229,16 +229,41 @@ function convertToPercent(rawPixels){
 
 function form_validator()
 {
-	var name = $(document).getElementById('txtName');
-	var email = $(document).getElementById('txtEmail');
-	var msg = $(document).getElementById('txtMessage');
+	var name = document.getElementById('txtName').value;
+	var email = document.getElementById('txtEmail').value;
+	var msg = document.getElementById('txtMessage').value;
 	if (name == '' || email == '' || msg == '') {
-		$("#info-msg").html('<b>Please fill all the details</b>');
-		return false;
+		showmsg("Please fill all the details.");
 	}
 	else
 	{
-		$("#info-msg").html('<b>Thank you</b>');	
-		return true;
+		jQuery.ajax({
+			url: 'contact.php',
+			type: 'POST',
+			data: {name: name, email: email, message: msg},
+			success: function(data){
+				showmsg(data);
+			}, async: false
+		});
 	}
+}
+
+
+var showmsg = function(html){
+		$(".infoMsg").html(html);
+		$(".infoMsgWrapper").css('top', '-10%');
+		$(".infoMsgWrapper").css('display', 'block');
+
+		$(".infoMsgWrapper").animate({
+			top: "1%"
+		}, 300);
+
+		$(".infoMsgWrapper").delay(3000);
+
+		$(".infoMsgWrapper").animate({
+			top: "-10%"
+		}, 300, function(){
+			$(this).css('display', 'none');
+		});		
+
 }
