@@ -229,6 +229,7 @@ function convertToPercent(rawPixels){
 
 function form_validator()
 {
+	showwaiter("Please wait while we gather your query ...");
 	var name = document.getElementById('txtName').value;
 	var email = document.getElementById('txtEmail').value;
 	var msg = document.getElementById('txtMessage').value;
@@ -237,18 +238,22 @@ function form_validator()
 	}
 	else
 	{
-		jQuery.ajax({
-			url: 'contact.php',
-			type: 'POST',
-			data: {name: name, email: email, message: msg},
-			success: function(data){
-				showmsg(data);
-				if(data == "Thank you for contacting us. We will get back to you ASAP.")
-				{
-					$("input[type='text'],input[type='email'], textarea").val('');
-				}
-			}, async: false
-		});
+		var setTimeoutHandle = setTimeout(function(){
+			jQuery.ajax({
+				url: 'contact.php',
+				type: 'POST',
+				data: {name: name, email: email, message: msg},
+				success: function(data){
+					showmsg(data);
+					clearTimeout(setTimeoutHandle);
+					if(data == "Thank you for contacting us. We will get back to you ASAP.")
+					{
+						$("input[type='text'],input[type='email'], textarea").val('');
+					}
+				}, async: false
+			});
+		}, 2000);
+		
 	}
 }
 
@@ -258,6 +263,7 @@ var showmsg = function(html){
 		$(".infoMsgWrapper").css('top', '-10%');
 		$(".infoMsgWrapper").css('display', 'block');
 
+		hidewaiter();
 		$(".infoMsgWrapper").animate({
 			top: "1%"
 		}, 300);
@@ -270,4 +276,14 @@ var showmsg = function(html){
 			$(this).css('display', 'none');
 		});		
 
+}
+
+var showwaiter = function(text){
+	if(typeof text !== 'undefined')
+		$(".waiterText").html(text);
+	$(".waiterWrapper").stop().fadeIn(400);
+}
+
+var hidewaiter = function(){
+	$(".waiterWrapper").stop().fadeOut(200);
 }
