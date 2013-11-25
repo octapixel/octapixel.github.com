@@ -243,6 +243,10 @@ function form_validator()
 			data: {name: name, email: email, message: msg},
 			success: function(data){
 				showmsg(data);
+				if(data == "Thank you for contacting us. We will get back to you ASAP.")
+				{
+					$("input[type='text'], textarea").val('');
+				}
 			}, async: false
 		});
 	}

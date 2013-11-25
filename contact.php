@@ -39,7 +39,7 @@
 				$from = $email;
 				$to = "hello@octapixel.com";
 				$cc = "arunko350@gmail.com,ramkrishna.info@gmail.com,krishnabette@gmail.com";
-				$headers = "From:" . $from;
+				$headers = "From:" . $from ."\r\n";
 				$headers .=  'Cc:'.$cc. "\r\n";
 
 				mail($to, $subject, $mail, $headers);
