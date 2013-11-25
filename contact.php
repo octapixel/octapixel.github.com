@@ -41,6 +41,8 @@
 				$cc = "arunko350@gmail.com,ramkrishna.info@gmail.com,krishnabette@gmail.com";
 				$headers = "From:" . $from ."\r\n";
 				$headers .=  'Cc:'.$cc. "\r\n";
+				$headers .= "MIME-Version: 1.0\r\n";
+				$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
 				mail($to, $subject, $mail, $headers);
 
