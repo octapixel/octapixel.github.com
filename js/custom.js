@@ -245,7 +245,7 @@ function form_validator()
 				showmsg(data);
 				if(data == "Thank you for contacting us. We will get back to you ASAP.")
 				{
-					$("input[type='text'], textarea").val('');
+					$("input[type='text'],input[type='email'], textarea").val('');
 				}
 			}, async: false
 		});
