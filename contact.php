@@ -32,7 +32,7 @@
 				$email = $_REQUEST['email'];
 				$message = $_REQUEST['message'];
 
-				$mail = "Name : $name <br> Email : $email <br> Message : $message";
+				$mail = "<html><head><style> th,td{padding:10px;} th{background:#DEDEDE;} </style></head><body> <table> <tr> <th>Name :</th><td> $name</td></tr> <tr><th> Email :</th><td> $email </td></tr><tr> <th>Message :</th> <td>$message</td></tr></table></body></html>";
 
 				$subject = "Octapixel Enquiry";
 
